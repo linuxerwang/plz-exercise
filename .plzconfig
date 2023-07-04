@@ -1,0 +1,26 @@
+; Please config file
+; Leaving this file as is is enough to use plz to build your project.
+; Please will stay on whatever version you currently have until you run
+; 'plz update', when it will download the latest available version.
+;
+; Or you can uncomment the following to pin everyone to a particular version;
+; when you change it all users will automatically get updated.
+; [please]
+; version = 17.1.0
+
+[parse]
+preloadsubincludes = ///proto//build_defs:proto
+preloadsubincludes = ///go//build_defs:go
+preloadsubincludes = ///go_proto//build_defs:go_proto
+
+[Plugin "go"]
+Target = //plugins:go
+ImportPath = github.com/linuxerwang/plz-exercise
+
+[Plugin "proto"]
+Target = //plugins:proto
+ProtocTool = //third_party/proto:protoc
+LanguageDef = //build_defs:go_proto
+
+[Plugin "go_proto"]
+Target = //plugins:go_proto
