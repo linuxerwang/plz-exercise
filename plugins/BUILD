@@ -7,7 +7,7 @@ plugin_repo(
 
 plugin_repo(
   name = "proto",
-  revision = "v0.1.0",
+  revision = "v0.2.1",
   plugin = "proto-rules",
   owner = "please-build",
 )

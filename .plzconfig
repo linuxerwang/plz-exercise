@@ -11,7 +11,6 @@
 [parse]
 preloadsubincludes = ///proto//build_defs:proto
 preloadsubincludes = ///go//build_defs:go
-preloadsubincludes = ///go_proto//build_defs:go_proto
 
 [Plugin "go"]
 Target = //plugins:go
@@ -20,7 +19,7 @@ ImportPath = github.com/linuxerwang/plz-exercise
 [Plugin "proto"]
 Target = //plugins:proto
 ProtocTool = //third_party/proto:protoc
-LanguageDef = //build_defs:go_proto
+LanguageDef = ///go_proto//build_defs:go
 
 [Plugin "go_proto"]
 Target = //plugins:go_proto
