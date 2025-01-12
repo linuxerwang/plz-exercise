@@ -15,3 +15,9 @@ preloadsubincludes = ///go//build_defs:go
 Target = //plugins:go
 GoTool = //third_party/go:toolchain|go
 STDLib = //third_party/go:std
+Modfile = //third_party/go:modfile
+
+[Alias "puku"]
+Cmd = run //third_party/binary:puku --
+PositionalLabels = true
+Desc = A tool to update BUILD files in Go packages
