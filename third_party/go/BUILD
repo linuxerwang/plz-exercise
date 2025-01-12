@@ -15,6 +15,13 @@ go_repo(
 )
 
 go_repo(
+    name = "etcd_pkg",
+    licences = ["Apache-2.0"],
+    module = "go.etcd.io/etcd/pkg/v3",
+    version = "v3.5.17",
+)
+
+go_repo(
     name = "etcd_cli",
     licences = ["Apache-2.0"],
     module = "go.etcd.io/etcd/client/v3",
