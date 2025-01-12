@@ -6,20 +6,12 @@
 ; Or you can uncomment the following to pin everyone to a particular version;
 ; when you change it all users will automatically get updated.
 ; [please]
-; version = 17.1.0
+; version = 17.12.7
 
 [parse]
-preloadsubincludes = ///proto//build_defs:proto
 preloadsubincludes = ///go//build_defs:go
 
 [Plugin "go"]
 Target = //plugins:go
-ImportPath = github.com/linuxerwang/plz-exercise
-
-[Plugin "proto"]
-Target = //plugins:proto
-ProtocTool = //third_party/proto:protoc
-LanguageDef = ///go_proto//build_defs:go
-
-[Plugin "go_proto"]
-Target = //plugins:go_proto
+GoTool = //third_party/go:toolchain|go
+STDLib = //third_party/go:std
