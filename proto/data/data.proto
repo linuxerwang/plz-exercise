@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = "github.com/proto/data";
+
+package github.com.linuxerwang.plz_exercise.proto.data;
+
+message Product {
+    string name = 1;
+}

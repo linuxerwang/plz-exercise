@@ -10,12 +10,27 @@
 
 [parse]
 preloadsubincludes = ///go//build_defs:go
+preloadsubincludes = ///proto//build_defs:proto
 
 [Plugin "go"]
 Target = //plugins:go
+importpath = github.com/linuxerwang/plz-exercise
 GoTool = //third_party/go:toolchain|go
 STDLib = //third_party/go:std
 Modfile = //third_party/go:modfile
+
+[Plugin "proto"]
+Target = //plugins:proto
+LanguageDef = ///go_proto//build_defs:go_proto
+ProtocTool = //third_party/proto:protoc
+
+[Plugin "go_proto"]
+; ProtoDep = //third_party/go:protobuf
+; ProtoDep = //third_party/go/github.com_golang_protobuf
+; GrpcDep = ///third_party/go/google.golang.org_grpc
+Target = //plugins:go-proto
+GrpcPlugin = ///third_party/go/google.golang.org_grpc_cmd_protoc-gen-go-grpc//:protoc-gen-go-grpc
+ProtoPlugin = ///third_party/go/google.golang.org_protobuf//cmd/protoc-gen-go
 
 [Alias "puku"]
 Cmd = run //third_party/binary:puku --

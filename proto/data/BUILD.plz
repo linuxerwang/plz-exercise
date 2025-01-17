@@ -1,0 +1,17 @@
+package(default_visibility = ["PUBLIC"])
+
+proto_library(
+    name = "data",
+    srcs = [
+        "data.proto",
+    ],
+    languages = ["go"],
+    protoc_flags = [
+        "--proto_path=.",
+        "--proto_path=src",
+    ],
+    deps = [
+        "///third_party/go/google.golang.org_protobuf//reflect/protoreflect",
+        "///third_party/go/google.golang.org_protobuf//runtime/protoimpl",
+    ],
+)

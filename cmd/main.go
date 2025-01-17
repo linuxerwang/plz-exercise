@@ -1,19 +1,13 @@
 package main
 
 import (
-	"time"
-
-	etcd "go.etcd.io/etcd/client/v3"
+	"github.com/linuxerwang/plz-exercise/proto/data"
+	"google.golang.org/protobuf/encoding/prototext"
 )
 
 func main() {
-	cli, err := etcd.New(etcd.Config{
-		Endpoints:   []string{"localhost:2300"},
-		DialTimeout: 5 * time.Second,
-	})
-	if err != nil {
-		panic(err)
+	p := data.Product{
+		Name: "jacket",
 	}
-
-	_ = cli
+	prototext.Marshal(&p)
 }
